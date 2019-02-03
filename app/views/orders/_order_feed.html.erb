@@ -1,0 +1,9 @@
+<h2>Order Feed</h2>
+<div id='feed'>
+	<% orders.each do |order|%>
+		<div class='order_feed_display'>
+			<p>Order: <span class='order_display_order'><%= order.order %></span></p>
+			<p>Restaurant: <span class='order_display_restaurant'><%= order.restaurant %></span></p>
+		</div>
+	<% end %>
+</div>
