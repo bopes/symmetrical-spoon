@@ -1,2 +1,4 @@
 <h1>home</h1>
 <%= render partial: 'orders/order_feed', locals: { orders: @orders } %>
+<%= render partial: 'locations/map', locals: { current_location: @current_location } %>
+<%= render partial: 'chats/chat_window', locals: { chat: @chat } %>

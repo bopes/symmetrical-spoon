@@ -1,0 +1,10 @@
+<h2>Chat!!</h2>
+<div id='chat-window'>
+	<% @chat.messages.last(10).each do |message|%>
+		<div class='chat-message'>
+			<p>
+				<span><%= message.user.name %></span>: <span><%= message.text %></span>
+			</p>
+		</div>
+	<% end %>
+</div>
