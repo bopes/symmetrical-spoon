@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'messages/create'
+
 	resources :orders
 
+	get 'admin' => 'static_pages#prototype_admin'
   get 'static_pages/home'
   root 'static_pages#home'
 
