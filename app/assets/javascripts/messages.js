@@ -1,17 +1,23 @@
 var channel = pusher.subscribe('chat-' + chatId);
 
-function buildChatMessage(name, text) {
-		elem = "<div class='chat-message'>" +
-			"<p><span>" + name + "</span>: <span>" + text + "</span></p>" + 
-			"</div>";
-		return elem;
+function buildChatMessage(name, text, user_id) {
+	var senderClass;
+	if ( user_id == userId ) {
+		senderClass = "customer_name"
+	} else {
+		senderClass = "deliverer_name"
+	}
+	elem = "<div class='chat-message'>" +
+		"<p><span class='" + senderClass + "'>" + name + "</span>: <span>" + text + "</span></p>" + 
+		"</div>";
+	return elem;
 }
 
 function receiveNewMessage(data) {
 	$('#message_text').val('');
-	$('#chat-window').append(buildChatMessage(data.name, data.text));
-	if( $('#chat-window').children().length > 10) {
-		$('#chat-window').children().first().remove();
+	$('#chat-feed').append(buildChatMessage(data.name, data.text, data.user_id));
+	if( $('#chat-feed').children().length > 10) {
+		$('#chat-feed').children().first().remove();
 	};
 }
 
