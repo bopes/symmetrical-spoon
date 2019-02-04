@@ -1,15 +1,17 @@
 var channel = pusher.subscribe('chat-' + chatId);
 
-function buildChatMessage(name, text, user_id) {
-	var senderClass;
-	if ( user_id == userId ) {
-		senderClass = "customer_name"
-	} else {
-		senderClass = "deliverer_name"
+function getSenderClass(user_id) {
+	if (user_id == userId) {
+		return "customer_name"
 	}
-	elem = "<div class='chat-message'>" +
-		"<p><span class='" + senderClass + "'>" + name + "</span>: <span>" + text + "</span></p>" + 
-		"</div>";
+	return "deliverer_name"
+}
+
+function buildChatMessage(name, text, user_id) {
+	var senderClass = getSenderClass(user_id);
+	elem = "<div class='chat-message'><p>" +
+		"<span class='" + senderClass + "'>" + name + "</span>: <span>" + text + "</span>" +
+		"</p></div>";
 	return elem;
 }
 
