@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
 				format.html	{ redirect_to :root }
 				format.json { render :new, status: :created, location: @chat }
 			else
-				format.html { redirect_to root }	
+				format.html { redirect_to :root }	
 				format.json { render json: @message.errors, status: :unprocessable_entity }
 			end
 		end
