@@ -9,9 +9,11 @@ function getSenderClass(user_id) {
 
 function buildChatMessage(name, text, user_id) {
 	var senderClass = getSenderClass(user_id);
-	elem = "<div class='chat-message'><p>" +
-		"<span class='" + senderClass + "'>" + name + "</span>: <span>" + text + "</span>" +
-		"</p></div>";
+	elem	=	"<div class='chat-message'>"
+				+		"<p>"
+				+			"<span class='" + senderClass + "'>" + name + "</span>: <span>" + text + "</span>"
+				+		"</p>" 
+				+	"</div>";
 	return elem;
 }
 

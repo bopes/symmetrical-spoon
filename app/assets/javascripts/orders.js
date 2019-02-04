@@ -1,10 +1,10 @@
 var channel = pusher.subscribe('orders');
 
 function buildOrderFeedDisplay(order, restaurant) {
-		elem = "<div class='order_feed_display fade_in'>" +
-			"<p style='font-size: x-large;'>" + order + "</p>" +
-			"<p>from " + restaurant + "</p>" +
-			"</div>";
+		elem	=	"<div class='order_feed_display fade_in'>"
+					+		"<p style='font-size: x-large;'>" + order + "</p>"
+					+		"<p>from " + restaurant + "</p>"
+					+	"</div>";
 		return elem;
 }
 
