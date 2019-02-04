@@ -1,2 +1,6 @@
-<h1>home</h1>
+<h1>Grubhub Realtime Updates</h1>
+<%= render partial: 'locations/map', locals: { current_location: @current_location } %>
+<hr>
 <%= render partial: 'orders/order_feed', locals: { orders: @orders } %>
+<hr>
+<%= render partial: 'chats/chat_window', locals: { chat: @chat, user: @user } %>

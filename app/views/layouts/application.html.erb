@@ -4,16 +4,19 @@
     <title>PusherAssignment</title>
     <%= csrf_meta_tags %>
 
+    <!-- Stylesheets -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- JavaScripts -->
     <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
     <script type="text/javascript">
-    	Pusher.logToConsole = true;
-    	var pusher = new Pusher('0937d3f92b9413f72778', {
-			  cluster: 'us2',
-			  forceTLS: true
-			});
+      var pusher = new Pusher('0937d3f92b9413f72778', {
+        cluster: 'us2',
+        forceTLS: true
+      });
     </script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', defer: "defer", 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
