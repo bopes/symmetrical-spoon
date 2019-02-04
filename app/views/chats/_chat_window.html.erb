@@ -8,3 +8,14 @@
 		</div>
 	<% end %>
 </div>
+  
+<%= form_for(@message, remote: true, format: :json, id: 'send-message') do |f| %>
+  <%= f.text_area :text, size: "60x12" %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.hidden_field :chat_id, value: @chat.id %>
+  <%= f.submit "Send" %>
+<% end %>
+
+<script type="text/javascript">
+	var chatId = <%= @chat.id %>
+</script>

@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 	def home
+		@user = User.find(1)
+
 		@orders = Order.last(5).reverse
 
 		@current_location = Location.last
@@ -9,8 +11,19 @@ class StaticPagesController < ApplicationController
 
 		@chat = Chat.last
 
+		@message = Message.new
+
 	end
 
-	def prototype_admin
+	def admin_order
+    Order.create(order: Faker::Food.dish, restaurant: Faker::Company.name, customer: Faker::Name.name)
+	end
+
+	def admin_location
+		Location.create(lat: 20 * rand, long: 20 * rand)
+	end
+
+	def admin_message
+		Message.create(chat_id: 1, user_id: 2, text: Faker::Shakespeare.hamlet_quote)
 	end
 end

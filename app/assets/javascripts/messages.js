@@ -1,4 +1,4 @@
-var channel = pusher.subscribe('chat');
+var channel = pusher.subscribe('chat-' + chatId);
 
 function buildChatMessage(name, text) {
 		elem = "<div class='chat-message'>" +
@@ -8,6 +8,7 @@ function buildChatMessage(name, text) {
 }
 
 function receiveNewMessage(data) {
+	$('#message_text').val('');
 	$('#chat-window').append(buildChatMessage(data.name, data.text));
 	if( $('#chat-window').children().length > 10) {
 		$('#chat-window').children().first().remove();
