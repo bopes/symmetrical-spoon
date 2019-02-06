@@ -95,18 +95,22 @@ This repo uses the following technologies:
 
 ### Setup Instructions
 1. Clone the repository.
-2. Create a file `config/application.yml` and enter your Pusher credentials:
+2. Install the gems.
+
+		bundle install
+		
+3. Create a file `config/application.yml` and enter your Pusher credentials:
 
 		PUSHER_APP_ID: 'XXXXXX'
 		PUSHER_KEY: 'XXXXXXXXXXXXXXXXXXXX'
 		PUSHER_SECRET: 'XXXXXXXXXXXXXXXXXXXX'
 		PUSHER_CLUSTER: 'XXX'
 
-3. Migrate the database:
+4. Migrate the database:
 
 		$ rails db:migrate
 
-4. Launch the Rails server:
+5. Launch the Rails server:
 
 		$ rails server
 
